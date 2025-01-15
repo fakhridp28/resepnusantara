@@ -22,13 +22,13 @@ header {
     background: rgb(2, 0, 36); /* fallback color */
     background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(73, 50, 64, 1) 50%, rgba(189, 10, 117, 1) 100%);
     color: white;
-    border-bottom: 5px solid #d12798; /* border untuk memberikan pemisah */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan halus */
+    border-bottom: 5px solid #d12798;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Bagian kiri header: Logo dan tagline */
 .header-left {
-    flex: 1; /* Agar menempati ruang lebih banyak */
+    flex: 1;
     text-align: left;
 }
 
@@ -61,7 +61,7 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
-    text-transform: uppercase; /* Agar huruf kapital */
+    text-transform: uppercase;
     position: relative;
 }
 
@@ -92,7 +92,7 @@ nav ul li a:hover::after {
     display: flex;
     align-items: center;
     position: relative;
-    margin-left: 30px; /* Memberikan sedikit jarak */
+    margin-left: 30px;
 }
 
 .search-container input {
@@ -227,4 +227,84 @@ footer {
 
 footer p {
     font-size: 16px;
+}
+
+/* Responsif untuk perangkat kecil */
+@media screen and (max-width: 768px) {
+    /* Atur header menjadi vertikal untuk perangkat kecil */
+    header {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .header-left {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    /* Navigasi vertikal pada perangkat kecil */
+    nav ul {
+        display: block;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    /* Menyesuaikan tampilan input pencarian */
+    .search-container {
+        margin-top: 20px;
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .search-container input {
+        width: 80%;
+        margin-top: 10px;
+    }
+
+    /* Menyesuaikan ukuran gambar dan card pada perangkat kecil */
+    .recipe-card {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    section#recipes h2 {
+        font-size: 24px;
+    }
+
+    /* Mengurangi padding dan margin pada beberapa bagian */
+    section#about, section#contact {
+        padding: 20px;
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+}
+
+/* Responsif untuk perangkat sangat kecil (mobile) */
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 28px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+    /* Menyesuaikan ukuran font pada navigasi */
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    .search-container input {
+        font-size: 14px;
+    }
 }
