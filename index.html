@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Resep Makanan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigasi -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#recipes">Resep</a></li>
+                <li><a href="#about">Tentang Kami</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+        
+    
+        <!-- Form Pencarian -->
+        <div class="search-container">
+            <input type="text" id="searchInput" onkeyup="searchRecipes()" placeholder="Cari resep...">
+        </div>
+    </header>
+    
+
+    <!-- Bagian Resep -->
+    <section id="recipes" class="recipes">
+        <h2>Resep Pilihan</h2>
+        <div class="recipe-card" data-name="nasi-goreng">
+            <img src="Nasi-Goreng-form-sq.jpg" width="100%" height="100%" alt="Nasi Goreng">
+            <h3> Nasi Goreng</h3>
+            <button onclick="goToRecipe('nasi-goreng')">Lihat Resep</button>
+        </div>
+        <div class="recipe-card" data-name="capcay">
+            <img src="capcay.jpg" width="100%" height="100%" alt="Capcay" >
+            <h3> Capcay</h3>
+            <button onclick="goToRecipe('capcay')">Lihat Resep</button>
+        </div>
+        <div class="recipe-card" data-name="sate-ayam">
+            <img src="sate.jpg" width="100%" height="100%" alt="Sate Ayam">
+            <h3> Sate Ayam</h3>
+            <button onclick="goToRecipe('sate-ayam')">Lihat Resep</button>
+        </div>
+        <div class="recipe-card" data-name="bakso">
+            <img src="bakso.jpg" width="100%" height="100%" alt="Bakso">
+            <h3>Bakso</h3>
+            <button onclick="goToRecipe('bakso')">Lihat Resep</button>
+        </div>
+        <div class="recipe-card" data-name="rendang">
+            <img src="rendang.jpg" width="100%" height="100%" alt="Rendang">
+            <h3>Rendang</h3>
+            <button onclick="goToRecipe('rendang')">Lihat Resep</button>
+        </div>
+        <div class="recipe-card" data-name="soto-betawi">
+            <img src="st betawi.jpg" width="100%" height="100%" alt="Soto Betawi">
+            <h3>Soto Betawi</h3>
+            <button onclick="goToRecipe('soto-betawi')">Lihat Resep</button>
+        </div>
+        <div class="recipe-card" data-name="soto-bogor">
+            <img src="stbgor.jpg" width="100%" height="100%" alt="Soto Bogor">
+            <h3>Soto Bogor</h3>
+            <button onclick="goToRecipe('soto-bogor')">Lihat Resep</button>
+        </div>
+        <div class="recipe-card" data-name="opor-ayam">
+            <img src="opor ayam.jpg" width="100%" height="100%" alt="Opor ayam">
+            <h3>Opor Ayam</h3>
+            <button onclick="goToRecipe('opor-ayam')">Lihat Resep</button>
+        </div>
+    </section>
+
+    <!-- Tentang Kami -->
+    <section id="about" class="about">
+        <h2>Tentang Kami</h2>
+        <p>Website Resep Makanan adalah platform yang menyediakan berbagai resep masakan dari berbagai penjuru dunia, untuk membantu Anda memasak dengan mudah dan praktis di rumah.</p>
+    </section>
+
+    <!-- Formulir Kontak -->
+    <section id="contact" class="contact">
+        <h2>Kontak Kami</h2>
+        <form action="#" method="post">
+            fakhridp28@gmail.com<br>
+            fajarirsyadd@gmail.com<br>
+            081388790483<br>
+            085771132361
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Website Resep Makanan </p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        // Fungsi untuk mencari resep berdasarkan input pencarian
+        function searchRecipes() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const recipeCards = document.querySelectorAll('.recipe-card');
+
+            recipeCards.forEach(card => {
+                const recipeName = card.getAttribute('data-name').toLowerCase();
+                if (recipeName.includes(input)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Fungsi untuk pindah ke halaman resep
+        function goToRecipe(recipe) {
+            window.location.href = `${recipe}.html`;
+        }
+    </script>
+
+</body>
+</html>

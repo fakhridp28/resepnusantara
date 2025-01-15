@@ -1,0 +1,230 @@
+/* Reset dasar untuk margin dan padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Gaya untuk body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Gaya untuk header dan navigasi */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgb(2, 0, 36); /* fallback color */
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(73, 50, 64, 1) 50%, rgba(189, 10, 117, 1) 100%);
+    color: white;
+    border-bottom: 5px solid #d12798; /* border untuk memberikan pemisah */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan halus */
+}
+
+/* Bagian kiri header: Logo dan tagline */
+.header-left {
+    flex: 1; /* Agar menempati ruang lebih banyak */
+    text-align: left;
+}
+
+header h1 {
+    font-size: 40px;
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+header p {
+    font-size: 18px;
+    font-style: italic;
+}
+
+/* Navigasi */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase; /* Agar huruf kapital */
+    position: relative;
+}
+
+/* Efek Hover pada menu navigasi */
+nav ul li a:hover {
+    color: #d12798;
+}
+
+/* Garis bawah saat hover */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #d12798;
+    bottom: -5px;
+    left: 50%;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Form Pencarian */
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 30px; /* Memberikan sedikit jarak */
+}
+
+.search-container input {
+    padding: 8px 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    background-color: white;
+    color: #333;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.search-container input:focus {
+    background-color: #fff6f8;
+    box-shadow: 0 0 10px rgba(189, 10, 117, 0.5);
+}
+
+.search-container input::placeholder {
+    color: #aaa;
+}
+
+/* Bagian Resep */
+section#recipes {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+section#recipes h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.recipe-card {
+    display: inline-block;
+    width: 280px;
+    margin: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.recipe-card h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.recipe-card button {
+    background-color: #d12798;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.recipe-card button:hover {
+    background-color: #9c1b75;
+    transform: scale(1.1);
+}
+
+/* Bagian Detail Resep */
+#recipe-detail {
+    padding: 20px;
+    background-color: #9191912f;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+/* Tentang Kami */
+section#about {
+    padding: 40px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+section#about h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+section#about p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Kontak */
+section#contact {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+section#contact h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+section#contact form {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    background: rgb(2, 0, 36); /* fallback color */
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(73, 50, 64, 1) 0%, rgba(189, 10, 117, 1) 100%);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 16px;
+}
