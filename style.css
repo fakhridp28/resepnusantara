@@ -8,9 +8,9 @@
 /* Gaya untuk body */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f5f5f5;
     color: #333;
-    line-height: 1.6;
+    line-height: 2;
 }
 
 /* Gaya untuk header dan navigasi */
@@ -19,7 +19,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background: rgb(2, 0, 36); /* fallback color */
+    background: rgb(255, 255, 255); /* fallback color */
     background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(73, 50, 64, 1) 50%, rgba(189, 10, 117, 1) 100%);
     color: white;
     border-bottom: 5px solid #d12798;
@@ -120,6 +120,21 @@ nav ul li a:hover::after {
 section#recipes {
     padding: 40px 20px;
     text-align: center;
+    position: relative;
+}
+
+section#recipes::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('nusantara.jpg'); /* Gambar latar belakang */
+    background-size: cover;
+    background-position: center;
+    opacity: 20%; /* Atur tingkat opacity untuk gambar */
+    z-index: -1; /* Pastikan gambar berada di belakang konten */
 }
 
 section#recipes h2 {
@@ -312,3 +327,4 @@ footer p {
         font-size: 14px;
     }
 }
+
